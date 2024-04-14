@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: pink;
+}
+
+.container {
+    margin-top: 30px;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.row {
+    position: relative !important;
+}
+
+#sim,
+#nao {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+#sim {
+    background: rgb(133, 215, 133);
+    font-size: 1.2rem;
+}
+#nao {
+    background: rgb(228, 91, 91);
+    font-size: 1.2rem;
+}
+
+#nao:hover {
+    background: rgba(228, 91, 91, 0.574);
+}
+#sim:hover {
+    background: rgba(133, 215, 133, 0.53);
+}
+
+.heart {
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 50px auto; /* centraliza horizontalmente */
+    top: 20px !important;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -200px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 200px;
+}
+
+.heart-content {
+    position: absolute;
+    top: 40%;
+    left: 59%;
+    transform: translate(-50%, -50%) rotate(45deg); /* Adiciona rotação para compensar */
+    transform-origin: center center; /* Define o ponto de origem da rotação */
+    z-index: 1; /* Coloca o texto acima dos pseudo-elementos */
+}
+
+.heartText {
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    width: 100%;
+    color: pink;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+@keyframes growRotate {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.image-container {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Adicionado para centralizar verticalmente */
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    bottom: 16%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: growRotate 1s ease-in-out forwards;
+}
+
+.btn-moved {
+    position: absolute;
+}
+
+.botoes {
+    margin: 10px auto;
+    width: 300px !important;
+    display: flex;
+}
+
+.btn-custom {
+    height: 60px !important;
+    width: 150px !important;
+}
